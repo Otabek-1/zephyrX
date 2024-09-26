@@ -1,0 +1,92 @@
+.loader-background{
+    width: 100%;
+    height: 100vh;
+    background:none;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0%;
+}
+
+img{
+    width: 150%;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    left: -28%;
+    z-index: -1;
+}
+
+.shadow{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 150%;
+    height: 100vh;
+    background: linear-gradient(to top, black, rgba(0, 0, 0, 0));
+}
+
+.main{
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-top: 20%;
+}
+.title {
+    font-family: "Nunito Sans";
+    color: white; /* Ichki matn rangi */
+    font-size: 60px;
+    font-style: italic;
+    font-weight: 900;
+    text-shadow: 0px 0px 5px black;
+    -webkit-text-stroke: 2px black; /* Matnga chegara (border) */
+}
+
+.title::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 5px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 183, 255, 1) 30%, rgba(0, 255, 255, 1) 50%, rgba(0, 183, 255, 1) 70%, rgba(255, 255, 255, 0) 100%);
+    animation: starTrail 2s ease-out forwards;
+}
+
+/* Animatsiya */
+@keyframes starTrail {
+    0% {
+        width: 0; /* Boshlanishida kenglik 0 bo'ladi */
+    }
+    100% {
+        width: 400px; /* Oxirida kenglik 400px bo'ladi */
+    }
+}
+
+.title span{
+    color: #fff61a;
+}
+
+
+/* loader */
+.loader {
+    border: 16px solid #f3f3f3; /* Tashqi och rangli halqa */
+    border-top: 6px solid rgb(130, 130, 235); /* Yuqoridan ko'k rangli halqa */
+    border-left: 6px solid rgb(130, 130, 235);
+    /* box-shadow: 0px 0px 5px white; */
+    position: absolute;
+    bottom: 15%;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-radius: 50%; /* Doira shakli */
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite; /* Aylanish animatsiyasi */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
